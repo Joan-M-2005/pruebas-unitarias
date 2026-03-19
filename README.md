@@ -1,4 +1,4 @@
-# Pruebas Unitarias y E2E para API REST con Flask
+# Pruebas Unitarias para API REST con Flask
 
 Este repositorio contiene la implementación de un entorno de pruebas profesional para una API REST construida con **Python y Flask**. El objetivo de este proyecto es garantizar la calidad, seguridad y fiabilidad del software mediante pruebas automatizadas.
 
@@ -30,5 +30,11 @@ Se logró una **cobertura de código del 89.22%**, superando el estándar de la 
 
 Se utilizó la directiva `pytest --cov=app` para medir qué porcentaje del código fue puesto a prueba, obteniendo resultados sobresalientes en los módulos de rutas y base de datos.
 
-![Reporte de Cobertura Pytest](img/cobertura.png)
 *(Aquí se muestra el reporte generado en HTML por pytest-cov)*
+![Reporte de Cobertura Pytest](img/cobertura1.png)
+
+![Reporte de Cobertura Pytest](img/cobertura2.png)
+
+![Reporte de Cobertura Pytest](img/cobertura3.png)
+
+![Reporte de Cobertura Pytest](img/cobertura4.png)
