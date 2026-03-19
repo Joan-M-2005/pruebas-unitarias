@@ -54,6 +54,7 @@ def create_app(config=DevelopmentConfig):
     from .routes.calificaciones import cal_bp
     from .routes.auth import auth_bp
     from .routes.ordenes import ordenes_bp
+    from .routes.materias import materias_bp
     
     # Registrar rutas (blueprints)
     app.register_blueprint(main_bp)
@@ -61,5 +62,6 @@ def create_app(config=DevelopmentConfig):
     app.register_blueprint(cal_bp)
     app.register_blueprint(auth_bp)
     app.register_blueprint(ordenes_bp)
+    app.register_blueprint(materias_bp)
     
     return app

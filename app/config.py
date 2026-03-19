@@ -15,6 +15,14 @@ class DevelopmentConfig(Config):
     """Configuración para desarrollo local."""
     DEBUG = True
 
+class TestingConfig(Config):
+    """Configuración exclusiva para pruebas. Usa SQLite en memoria."""
+    TESTING = True
+    DEBUG = False
+    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
+    WTF_CSRF_ENABLED = False
+    JWT_ACCESS_TOKEN_EXPIRES = False
+
 class ProductionConfig(Config):
     """Configuración para producción."""
     DEBUG = False

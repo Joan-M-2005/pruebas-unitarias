@@ -1,48 +1,34 @@
-# API REST con Flask - Ejercicios Prácticos
+# Pruebas Unitarias y E2E para API REST con Flask
 
-Este repositorio contiene la serie de ejercicios prácticos realizados para aprender y dominar la creación de APIs RESTful utilizando **Python, Flask y PostgreSQL**. 
+Este repositorio contiene la implementación de un entorno de pruebas profesional para una API REST construida con **Python y Flask**. El objetivo de este proyecto es garantizar la calidad, seguridad y fiabilidad del software mediante pruebas automatizadas.
 
-A lo largo de estos ejercicios, se implementaron desde operaciones CRUD básicas hasta sistemas de seguridad avanzados y documentación automática, sentando las bases para proyectos a mayor escala (como sistemas de geolocalización o rastreo de transporte).
-
----
-
-## Tecnologías Utilizadas
-* **Backend:** Python, Flask
-* **Base de Datos:** PostgreSQL, SQLAlchemy (ORM)
-* **Seguridad:** Flask-JWT-Extended (JSON Web Tokens)
-* **Documentación:** Flasgger (Swagger UI)
-* **Testing:** Postman
+Se logró una **cobertura de código del 89.22%**, superando el estándar de la industria.
 
 ---
 
-## Ejercicios Realizados
-
-### Ejercicio 1: Configuración Inicial y Estructura
-Configuración del entorno virtual, conexión a la base de datos PostgreSQL utilizando el patrón *Application Factory* de Flask.
-![Configuración Inicial](img/1.png)
-![Otra vista](img/2.png)*
-
-### Ejercicio 2: Modelos y Operaciones CRUD
-Creación del modelo `Estudiante` y desarrollo de los endpoints para las operaciones de Crear, Leer, Actualizar y Eliminar (CRUD).
-![Prueba de POST Estudiante](img/3.png)
-![Prueba de GET Estudiantes](img/4.png)
-
-### Ejercicio 3: Relaciones entre Tablas (Kardex)
-Implementación de llaves foráneas y relaciones complejas (Estudiantes, Materias y Calificaciones) para generar un Kardex con cálculos matemáticos automáticos.
-![Generación de Kardex](img/5.png)
-
-### Ejercicio 4: Autenticación con JWT
-Protección de rutas de la API mediante la generación y validación de JSON Web Tokens (JWT). Implementación de rutas de registro, login y perfil protegido.
-![Generación de Token](img/6.png)
-![Acceso a Ruta Protegida](img/7.png)
-
-### Ejercicio 5: Documentación Interactiva con Swagger
-Integración de Flasgger para auto-generar la documentación de la API, permitiendo realizar pruebas directas desde el navegador.
-![Interfaz Swagger UI](img/8.png)
+## Tecnologías y Herramientas de Testing
+* **Framework de Pruebas:** Pytest
+* **Simulación HTTP:** Pytest-Flask
+* **Base de Datos de Pruebas:** SQLite en memoria (aislada de producción)
+* **Medición de Cobertura:** Pytest-cov
 
 ---
 
-## 🏆 Proyecto Final: TechStore API (Nivel Jefe)
-Implementación de un endpoint complejo con transacciones atómicas (`commit` y `rollback`) para procesar órdenes de compra, verificando inventario y descontando stock en tiempo real.
-![Prueba de Compra TechStore](img/9.png)
-![Descuento de Stock en BD](img/10.png)
+## Tipos de Pruebas Implementadas
+
+1. **Pruebas Unitarias (Modelos):** * Verificación de hashing de contraseñas de usuarios.
+   * Validación de campos y valores por defecto.
+2. **Pruebas de Integración (CRUD y Endpoints):** * Manejo de peticiones válidas e inválidas (400, 404, 409).
+   * Cálculos estadísticos complejos (Generación de Kardex y promedios).
+3. **Pruebas de Seguridad (JWT):** * Simulación de ataques con tokens manipulados o expirados.
+   * Control de acceso basado en roles (RBAC).
+4. **Pruebas End-to-End (E2E):** * Simulación de un flujo completo: un administrador crea productos, un cliente se registra, realiza una compra y el sistema descuenta el inventario correctamente mediante transacciones atómicas (Commit/Rollback).
+
+---
+
+## Reporte de Cobertura (Coverage)
+
+Se utilizó la directiva `pytest --cov=app` para medir qué porcentaje del código fue puesto a prueba, obteniendo resultados sobresalientes en los módulos de rutas y base de datos.
+
+![Reporte de Cobertura Pytest](img/cobertura.png)
+*(Aquí se muestra el reporte generado en HTML por pytest-cov)*
